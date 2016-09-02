@@ -2,42 +2,42 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2196f3">
 
-    <link rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.css">
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <nav>
-      <div class="nav-wrapper" style="background-color:#E5451F;">
-        <a class="brand-logo">CSI</a>
-      </div>
-    </nav>
-    <ul class="tabs">
-      <li class="tab col s2"><a class="active" style="color:#E5451F;" href="#absen">Absen</a></li>
-      <li class="tab col s2"><a href="#lanjut" style="color:#E5451F;">Lanjut</a></li>
-    </ul>
-    <br>
-    <div class="row">
-       <div class="col s12">
-         <div id="lanjut" class="col s12">
-           <div class="row" align="center">
-             <div class="col-md-3">
-                <h3>Pasien Selanjutnya</h3>
-                <button class="waves-effect waves-light btn red darken-1 btn-large" onclick="getFaskes('puskesmas')" style="width:100%">Lanjut</button>
-              </div>
-           </div>
-         </div>
-         <div id="absen" class="col s12">
-           
-         </div>
-       </div>
-      </div>
+    <div class="views">
+      <div class="view view-main">
+        <div class="pages navbar-fixed">
 
-    <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
-    <script src="bower_components/Materialize/dist/js/materialize.js" charset="utf-8"></script>
-    <script src="bower_components/firebase/firebase.js" charset="utf-8"></script>
-    <script src="js/main.js" charset="utf-8"></script>
+          <div data-page="index" class="page">      
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="center">Internal</div>
+              </div>
+            </div>            
+      
+            <div class="page-content" align="center">
+              <h2>Jumlah Pasien: <span id="jumlah"></span></h2>
+              <button class="button button-big button-fill button-raised color-blue" style="width:75%">pasien penuh</button>
+            </div>
+
+          </div>
+
+        </div> <!-- ./pages.navbar-fixed -->
+      </div> <!-- ./view.view-main -->
+    </div> <!-- ./views -->
+    
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
   </body>
-</html>
+</html> 
+
+<!-- <br>
+<button onclick="loadData()" class="button button-big button-fill button-raised color-blue" style="width:75%">jumlah pasien</button>  -->
