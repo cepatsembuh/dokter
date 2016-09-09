@@ -6,6 +6,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
+var label = document.getElementById('bigOne');
 var date = new Date(),
     year = date.getFullYear(),
     month = date.getMonth() + 1,
@@ -14,10 +15,6 @@ var date = new Date(),
     today = ref.child(right_now);
 
 function loadData() {
-	today.once('value', function(snapshot){
-		var data = snapshot.numChildren(),
-		label = document.getElementById('jumlah');
-
-		label.innerHTML = data;
-	});
+	'use strict';
+	today.once('value', snap => label.innerText = snap.numChildren());
 }
