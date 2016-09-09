@@ -1,5 +1,10 @@
-window.onload = loadData();
-var ref = new Firebase('https://dr-iqbal.firebaseio.com');
+// Initialize Firebase
+var config = {
+	 apiKey: "",
+	 authDomain: "",
+	 databaseURL: ""
+};
+firebase.initializeApp(config);
 
 var date = new Date(),
     year = date.getFullYear(),
