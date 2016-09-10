@@ -1,8 +1,8 @@
 // Initialize Firebase
 var config = {
-	 apiKey: "",
-	 authDomain: "",
-	 databaseURL: ""
+	 apiKey: "fFRaVtFRskcRYpFdbbLC6NaGz8JSEpGPggQrudgF",
+	 authDomain: "cepatsembuh.firebaseapp.com",
+	 databaseURL: "https://cepatsembuh.firebaseio.com"
 };
 firebase.initializeApp(config);
 
