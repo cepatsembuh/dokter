@@ -6,7 +6,12 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var label = document.getElementById('bigOne');
+var ref = firebase.database().ref(),
+		puskesmas = ref.child('puskesmas'),
+		faskes = puskesmas.child('kelapa_gading'),
+		pasien = puskesmas.child('pasien');
+
+var label = document.getElementById('jumlah');
 var date = new Date(),
     year = date.getFullYear(),
     month = date.getMonth() + 1,
