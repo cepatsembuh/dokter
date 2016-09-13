@@ -6,20 +6,23 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var ref = firebase.database().ref(),
-		puskesmas = ref.child('puskesmas'),
-		faskes = puskesmas.child('kelapa_gading'),
-		pasien = puskesmas.child('pasien');
-
+var ref = firebase.database().ref();
+var date = new Date();
 var label = document.getElementById('jumlah');
-var date = new Date(),
-    year = date.getFullYear(),
-    month = date.getMonth() + 1,
-    day = date.getDate(),
-    right_now = year + '-' + month + '-' + day,
-    today = ref.child(right_now);
+
+var puskesmas = ref.child('puskesmas'),
+	faskes = puskesmas.child('kelapa_gading'),
+	pasien = puskesmas.child('pasien');
+
+var year = date.getFullYear(),
+	month = date.getMonth() + 1,
+	day = date.getDate();
+
+var right_now = year + '-' + month + '-' + day,
+	today = pasien.child(right_now),
+	poli = today.child('bpu');
 
 function loadData() {
 	'use strict';
-	today.once('value', snap => label.innerText = snap.numChildren());
+	poli.once('value', snap => label.innerText = snap.numChildren());
 }
