@@ -22,7 +22,11 @@ var right_now = year + '-' + month + '-' + day,
 	today = pasien.child(right_now),
 	poli = today.child('bpu');
 
+var millie_brown = firebase.database().ref('/puskesmas/kelapa_gading/pasien' + right_now + 'bpu')
+
 function loadData() {
 	'use strict';
-	poli.once('value', snap => label.innerText = snap.numChildren());
+	millie_brown.on('value', function(snapshot) {
+	  label.innerText = snapshot.numChildren()
+	});
 }
