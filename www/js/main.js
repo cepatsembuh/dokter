@@ -24,6 +24,13 @@ var right_now = year + '-' + month + '-' + day,
 
 var millie_brown = firebase.database().ref('puskesmas/kelapa_gading/pasien/' + right_now + '/bpu')
 
+function nextQueue() {
+	'use strict';
+	millie_brown.on('value', function(snapshot) {
+	  label.innerText = snapshot.numChildren() - 1;
+	});
+}
+
 function loadData() {
 	'use strict';
 	millie_brown.on('value', function(snapshot) {
